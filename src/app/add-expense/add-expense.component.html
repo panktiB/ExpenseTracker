@@ -1,0 +1,126 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h2>Add an expense</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8 offset-3">
+      <form (ngSubmit)="expenseAdded()">
+        <!--  class="form-inline" -->
+        <div class="form-group form-inline">
+          <label for="date" class="col-3">Date</label>
+          <input
+            type="date"
+            class="form-control form-control-sm col-5"
+            id="date"
+            [(ngModel)]="inputDate"
+            name="date"
+            #date="ngModel"
+          />
+          <small>
+            <div *ngIf="date.touched">
+              <div *ngIf="date.pristine" class="invalidFont">
+                Please enter valid date.
+              </div>
+              <div *ngIf="!date.value && date.dirty" class="invalidFont">
+                Please enter a date.
+              </div>
+            </div>
+          </small>
+        </div>
+
+        <div class="form-group form-inline">
+          <label for="amount" class="col-3">Amount</label>
+          <input
+            type="number"
+            class="form-control form-control-sm col-5"
+            id="amount"
+            placeholder="Amount"
+            [(ngModel)]="amount"
+            name="amount"
+            min="0"
+            #cost="ngModel"
+          />
+          <small>
+            <div *ngIf="cost.touched">
+              <div *ngIf="cost.pristine" class="invalidFont">
+                Please enter a amount.
+              </div>
+              <div
+                *ngIf="( (!cost.value && cost.dirty) || cost.value<0 )"
+                class="invalidFont"
+              >
+                Please enter a valid amount.
+              </div>
+            </div>
+          </small>
+        </div>
+
+        <div class="form-group form-inline">
+          <label for="category" class="col-3">Category</label>
+          <select
+            class="form-control form-control-sm col-5"
+            id="category"
+            name="cateogry"
+            [(ngModel)]="category"
+            #expCat="ngModel"
+          >
+            <option [selected] [ngValue]="null">Choose a Category</option>
+            <option *ngFor="let c of categoryArr">{{c}}</option>
+          </select>
+          <small>
+            <div *ngIf="expCat.touched">
+              <div *ngIf="expCat.pristine" class="invalidFont">
+                Please enter valid category.
+              </div>
+              <div *ngIf="!expCat.value && expCat.dirty" class="invalidFont">
+                Please select a category.
+              </div>
+            </div>
+          </small>
+        </div>
+
+        <div class="form-group form-inline">
+          <label for="description" class="col-3">Description</label>
+          <textarea
+            class="form-control form-control-sm col-5"
+            id="description"
+            rows="1"
+            [(ngModel)]="description"
+            name="description"
+            #descrip="ngModel"
+          >
+              Description</textarea
+          >
+          <!-- <small>
+            <div *ngIf="descrip.touched">
+              <div *ngIf="descrip.pristine" class="invalidFont">
+                Please enter valid description.
+              </div>
+              <div *ngIf="!descrip.value && descrip.dirty" class="invalidFont">
+                Please enter a description.
+              </div>
+            </div>
+          </small> -->
+        </div>
+
+        <!-- disabled button is displayed untill valid values are entered -->
+        <div
+          *ngIf="date.value && ( cost.value && cost.value >= 0 ) && expCat.value"
+        >
+          <button type="submit" class="btn btn-primary col-6 offset-1">
+            Submit
+          </button>
+        </div>
+        <div
+          *ngIf="!date.value || ( !cost.value || cost.value < 0 ) || !expCat.value"
+        >
+          <button type="submit" disabled class="btn btn-primary col-6 offset-1">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

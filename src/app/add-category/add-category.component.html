@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h2>Add a new category</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8 offset-3">
+      <form (ngSubmit)="categoryAdded()">
+        <div class="form-group form-inline">
+          <label for="date" class="col-3">Enter a new category</label>
+          <input
+            type="category"
+            class="form-control col-5"
+            id="category"
+            [(ngModel)]="newCategory"
+            name="category"
+            #category="ngModel"
+          />
+          <small>
+            <div *ngIf="category.touched">
+              <div *ngIf="category.pristine" class="invalidFont">
+                Please enter valid date.
+              </div>
+              <div
+                *ngIf="!category.value && category.dirty"
+                class="invalidFont"
+              >
+                Please enter a date.
+              </div>
+            </div>
+          </small>
+        </div>
+        <button type="submit" class="btn btn-primary col-6 offset-1">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+.container {
+  padding-top: 30px;
+}
+
+.invalidFont {
+  color: red;
+}
+
+.form-control {
+  margin: 10px;
+}

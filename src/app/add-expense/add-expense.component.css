@@ -1,0 +1,27 @@
+.container {
+  padding-top: 30px;
+}
+
+#form-box {
+  background-color: white;
+  box-shadow: 2px 2px 2px white;
+  border-radius: 5px;
+}
+.form-control {
+  /* border: 0; */
+  /* border-bottom: 0.5px solid grey;
+  background-color: none;
+  border-radius: none; */
+  margin: 10px;
+}
+
+#date,
+#amount,
+#category,
+#description {
+  /* border: 1px solid rgb(172, 171, 171); */
+}
+
+.invalidFont {
+  color: red;
+}
