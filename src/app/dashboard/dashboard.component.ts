@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { DataService } from "./../services/data.service";
 import { ChartService } from "../services/chart-data.service";
 import { CategoryService } from "../services/category.service";
+import { GoogleChartsModule } from "angular-google-charts";
 
 @Component({
   selector: "app-dashboard",
@@ -14,7 +15,8 @@ export class DashboardComponent implements OnInit {
   constructor(
     private dataservice: DataService,
     private categoryservice: CategoryService,
-    private chartdata: ChartService
+    private chartdata: ChartService,
+    private google: GoogleChartsModule
   ) {}
 
   ngOnInit() {
