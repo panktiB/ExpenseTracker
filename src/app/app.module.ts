@@ -2,6 +2,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { AngularFontAwesomeModule } from "angular-font-awesome";
+import { GoogleChartsModule } from "angular-google-charts";
 //import { expense } from "./expenseObject/expense";
 //import { MatSidenavModule } from "@angular/material";
 
@@ -28,7 +29,8 @@ import { ChartService } from "./services/chart-data.service";
 
     //BrowserAnimationsModule,
     FormsModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    GoogleChartsModule
     //MatSidenavModule
   ],
   providers: [DataService, CategoryService, ChartService],
