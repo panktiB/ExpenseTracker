@@ -8,7 +8,7 @@ Please ensure to have Node, NPM and Angular CLI installed on your machine.
 3. to install angular cli run 'npm install -g @angular/cli
 4. confirm installation by running 'ng --version'. Ensure you are on latest Angular version, i.e., Angular 8
 
-If yo have completed installing node, npm and angular cli, follow below steps to run the application -
+If you have completed installing node, npm and angular cli, follow below steps to run the application -
 1. navigate to project folder from Command Prompt and run the command 'npm install'
 2. check to confirm that node_modules folder now exists in application folder
 3. run command 'ng serve' from Command Prompt
